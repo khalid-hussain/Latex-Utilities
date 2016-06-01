@@ -1,0 +1,18 @@
+\documentclass[14pt]{article}
+\usepackage{fontspec}
+\usepackage{pgffor}
+\usepackage[a4paper]{geometry}
+\setlength{\parindent}{0in}
+
+\setmainfont{Times New Roman}
+\newfontfamily\QPCSymbols[
+	Script=Arabic,
+	Numbers=Proportional,
+	Scale=2.5,
+]{KFGQPC Arabic Symbols 01}
+
+\begin{document}
+\foreach \x in {1,2,3,...,95}{
+\x . \QPCSymbols{\XeTeXglyph \x} \\[14pt]
+}
+\end{document}
