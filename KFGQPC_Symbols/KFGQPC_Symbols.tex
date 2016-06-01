@@ -1,6 +1,6 @@
 \documentclass[14pt, landscape]{article}
 % ===================
-% 	  PACKAGES
+%     PACKAGES
 % ===================
 \usepackage{fontspec}
 \usepackage{pgffor}% For loops
@@ -13,35 +13,32 @@
 \setlength{\parindent}{0in}
 
 % ===================
-% 	  FONTS
+%     FONTS
 % ===================
 \newfontfamily\QPCSymbols[
-	Scale=2.2,
+  Scale=2.2,
 ]{KFGQPC Arabic Symbols 01}
 
-
+% Polyglossia settings
 \setmainlanguage{english}
 \setotherlanguage[calendar=hijri, numerals=mashriq]{arabic}
 
 % ===================
-% 	  METADATA
+%     METADATA
 % ===================
 \author{Muḥammad Khālid Ḥussain}
 \title{KFGQPC Arabic Symbols 01 Glyph Table}
 \date{\Hijritoday[1]}
 
-
-
 \begin{document}
-
 \maketitle
 
 \begin{multicols}{3}
-	\begin{enumerate}
-		\foreach \x in {2,3,...,97}{
-			\item \QPCSymbols{\XeTeXglyph \x} \\[14pt]
-		}
-	\begin{enumerate}
+  \begin{enumerate}
+    \foreach \x in {2,3,...,97}{
+      \item \QPCSymbols{\XeTeXglyph \x} \\[14pt]
+    }
+  \end{enumerate}
 \end{multicols}
 
 \end{document}
