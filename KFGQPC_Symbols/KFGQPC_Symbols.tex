@@ -1,18 +1,47 @@
-\documentclass[14pt]{article}
+\documentclass[14pt, landscape]{article}
+% ===================
+% 	  PACKAGES
+% ===================
 \usepackage{fontspec}
-\usepackage{pgffor}
+\usepackage{pgffor}% For loops
+\usepackage{libertine}
+\usepackage{polyglossia}
+\usepackage{multicol}
 \usepackage[a4paper]{geometry}
+
+% No indentation
 \setlength{\parindent}{0in}
 
-\setmainfont{Times New Roman}
+% ===================
+% 	  FONTS
+% ===================
 \newfontfamily\QPCSymbols[
-	Script=Arabic,
-	Numbers=Proportional,
-	Scale=2.5,
+	Scale=2.2,
 ]{KFGQPC Arabic Symbols 01}
 
+
+\setmainlanguage{english}
+\setotherlanguage[calendar=hijri, numerals=mashriq]{arabic}
+
+% ===================
+% 	  METADATA
+% ===================
+\author{Muḥammad Khālid Ḥussain}
+\title{KFGQPC Arabic Symbols 01 Glyph Table}
+\date{\Hijritoday[1]}
+
+
+
 \begin{document}
-\foreach \x in {1,2,3,...,95}{
-\x . \QPCSymbols{\XeTeXglyph \x} \\[14pt]
-}
+
+\maketitle
+
+\begin{multicols}{3}
+	\begin{enumerate}
+		\foreach \x in {2,3,...,97}{
+			\item \QPCSymbols{\XeTeXglyph \x} \\[14pt]
+		}
+	\begin{enumerate}
+\end{multicols}
+
 \end{document}
