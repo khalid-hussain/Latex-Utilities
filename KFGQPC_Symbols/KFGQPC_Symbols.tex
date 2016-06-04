@@ -3,13 +3,14 @@
 % ===================
 %     PACKAGES
 % ===================
+%\usepackage{pgffor}% For loops
 \usepackage{fontspec}
-\usepackage{pgffor}% For loops
 \usepackage{libertine}
 \usepackage{polyglossia}
 \usepackage{multicol}
 \usepackage{import}
 \usepackage{xltxtra}
+\usepackage{url}
 \usepackage[a4paper]{geometry}
 
 % No indentation
@@ -31,7 +32,7 @@
   Numbers=Proportional,
   Scale=1.4%,
 ]{Scheherazade}
-% ]{Traditional Arabic}
+
 % ===================
 %     METADATA
 % ===================
@@ -42,28 +43,40 @@
 \begin{document}
 \maketitle
 
-\section{\XeLaTeX{} Use}
+\section{Introduction}
+
+This project aims to make the glyphs from the \verb$|KFGQPC Arabic Symbols 01$ font more acessible to users in XeLaTeX, while at the same time providing a higher quality reference for those using Microsoft Word.\\
+
+The source files for this document can be found at\\
+\url{https://github.com/khalid-hussain/Latex-Utilities/tree/master/KFGQPC_Symbols}
+
+\section{Using with \XeLaTeX{}}
 
 To use this font with XeLaTeX, define the font first. An example of such a definition is as follows.
 
-\begin{verbatim}
-\newfontfamily\QPCSymbols[
-  Scale=2.2,
-]{KFGQPC Arabic Symbols 01}
-\end{verbatim}
+  \begin{verbatim}
+  \newfontfamily\QPCSymbols[
+    Scale=2.2,
+  ]{KFGQPC Arabic Symbols 01}
+  \end{verbatim}
 
 Then simply call \verb$\XeTeXglyph <number>$ to call the appropriate glyph into your document. If you wish to use the glyps in between other text, it is recommended to create a macro. An example of a macro which builds upon the last example is as follows.
 
-\begin{verbatim}
-\newcommand{\<your_command_name>}[1]{{\QPCSymbols{\XeTeXglyph <number>}}}
-\end{verbatim}
+  \begin{verbatim}
+  \newcommand{\<your_command_name>}[1]{{\QPCSymbols{\XeTeXglyph <number>}}}
+  \end{verbatim}
 
-Do not forget to scale the glyph according to main text font, otherwise, you will have slight gaps between sentences to make up for the different in heights of the glyph and the text.
+Do not forget to scale the glyph according to main text font, otherwise, you will have slight gaps between sentences to make up for the difference in heights of the glyph and the text.
 
-\section{Microsoft Word}
+\section{Using with Microsoft Word}
 
 To use the glyphs in Microsoft Word, type the corresponding key and change its font to the 
-`KFGQPC Arabic Symbols 01` font.
+`KFGQPC Arabic Symbols 01` font.\\
+
+Credits\\
+\url{ http://fonts.qurancomplex.gov.sa/?page_id=486}
+
+\section{Glyph Table}
 
 \begin{tabular}{c|c|c|c|c}
 No & Symbol  & Arabic Text & Key & XeLaTeX\\
