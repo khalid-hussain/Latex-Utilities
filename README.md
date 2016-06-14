@@ -8,4 +8,4 @@ Shortcut file for all the chapters of the Qurʾān. UTF-8 symbols were not used 
 
 ## KFGQPC Symbols
 
-KFGQPC stand for `King Fahad Glorious Qurʾān Printing Complex` and they have released a font consisting of Arabic calligraphic glyyphs. This aims to make it easier to reference them and use them in XeLaTeX and Microsoft Word.
+KFGQPC stand for `King Fahad Glorious Qurʾān Printing Complex` and they have released a font consisting of Arabic calligraphic glyphs. This aims to make it easier to reference them and use them in XeLaTeX and Microsoft Word.
