@@ -1,9 +1,10 @@
 % !TeX program = xelatex
 % http://fonts.qurancomplex.gov.sa/?page_id=486
-\documentclass[parskip=full, oneside]{article}
+\documentclass[oneside]{article}
 \setlength{\parindent}{0in}
-\usepackage[a4paper]{geometry}
+\usepackage[a4paper, bottom=3.5cm, top=3.5cm]{geometry}
 \usepackage{changepage}
+
 %****************************************
 %      Packages
 %******************************
@@ -14,6 +15,19 @@
 \usepackage{import}
 \usepackage{url}
 \usepackage{fontspec}
+\usepackage{listings,color}
+
+% Code environment
+\definecolor{verbgray}{gray}{0.9}
+\lstnewenvironment{code}{%
+\lstset{backgroundcolor=\color{verbgray},
+  frame=single,
+  framerule=0pt,
+  basicstyle=\ttfamily,
+  columns=fullflexible}}{}
+\definecolor{shadecolor}{rgb}{.9, .9, .9}
+% End
+
 \usepackage[%
   pdfauthor={Muḥammad Khālid Ḥussain},
   pdftitle={KFGQPC Arabic Symbols 01 Glyph Table},
@@ -36,22 +50,23 @@
 \setmonofont{Inconsolata}
 
 % The KFGPC Arabic Symbols font
-\newfontfamily\QPCSymbols[Scale=1.8]{KFGQPC Arabic Symbols 01}
+\newfontfamily\QPCSymbols[Scale=2.2]{KFGQPC Arabic Symbols 01}
 \newfontfamily\QPCSymbolsBig[Scale=3]{KFGQPC Arabic Symbols 01}
 
 % Normal Arabic font
 \newfontfamily\arabicfont[%
   Script=Arabic,%
   Numbers=Proportional,%
-  Scale=1.4%
-]{Scheherazade}
+  Scale=1.6%
+]{Arabic Typesetting} % Use if font is available
+%]{Scheherazade} % Otherwise use this
 
 %****************************************
 %      Metadata
 %******************************
 \author{Muḥammad Khālid Ḥussain}
 \title{KFGQPC Arabic Symbols 01 Glyph Table}
-\date{\Hijritoday[1]}
+\date{\Hijritoday}%[1]}
 
 \begin{document}
 \maketitle
@@ -63,7 +78,7 @@
 \section{Introduction}
 
 This project aims to make the glyphs from the \verb$KFGQPC Arabic Symbols 01$ 
-font more acessible to users in XeLaTeX, while at the same time providing a 
+font more accessible to users in \XeLaTeX, while at the same time providing a 
 higher quality reference for those using Microsoft Word.\\
 
 As of writing, the font can be downloaded from\\
@@ -72,42 +87,42 @@ As of writing, the font can be downloaded from\\
 The source files for this document can be found at\\
 \url{https://github.com/khalid-hussain/Latex-Utilities/tree/master/KFGQPC_Symbols}
 
-\section{Using with XeLaTeX{}}
+\section{Using with \XeLaTeX}
 
 To use this font with XeLaTeX, define the font first. An example of such a 
 definition is as follows.
 
-  \begin{verbatim}
+  \begin{code}
   \newfontfamily\QPCSymbols[
     Scale=2.2,
   ]{KFGQPC Arabic Symbols 01}
-  \end{verbatim}
+  \end{code}
 
 Then simply call \verb$\XeTeXglyph <number>$ to call the appropriate glyph into 
 your document. If you wish to use the glyps in between other text, it is 
 recommended to create a macro. An example of a macro which builds upon the last 
 example is as follows.
 
-  \begin{verbatim}
+  \begin{code}
   \newcommand{\<your_command_name>}[1]{{\QPCSymbols{\XeTeXglyph <number>}}}
-  \end{verbatim}
+  \end{code}
 
 Do not forget to scale the glyph according to main text font, otherwise, you 
-will have slight gaps between sentences to make up for the difference in 
-heights of the glyph and the text.
+will have gaps between sentences to make up for the difference in 
+heights.
 
 \section{Using with Microsoft Word}
 
 To use the glyphs in Microsoft Word, type the corresponding key and change its 
-font to the `KFGQPC Arabic Symbols 01' font.\\
+font to the \verb$KFGQPC Arabic Symbols 01$ font.\\
 
 Credits\\
 \url{http://fonts.qurancomplex.gov.sa/?page_id=486}
 
+\newpage
+
 \section{Glyph Table}
 
-\begin{adjustwidth}{-3cm}{-3cm}
 \input{table}
-\end{adjustwidth}
 
 \end{document}
